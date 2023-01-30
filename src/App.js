@@ -3,7 +3,7 @@ import SearchHeader from './components/SearchHeader/SearchHeader';
 
 export default function App() {
   return (
-    <div className='h-screen w-screen bg-neutral-700'>
+    <div>
       <SearchHeader />
       <Outlet />
     </div>

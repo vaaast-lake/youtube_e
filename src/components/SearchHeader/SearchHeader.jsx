@@ -18,13 +18,13 @@ export default function SearchHeader() {
   useEffect(() => setText((prev) => keyword || ''), [keyword]);
 
   return (
-    <header id="container">
-      <Link to='/'>
-        <img src={YoutubeLogo} alt="youtube-logo" className='w-40 h-7' />
+    <header id="container" className='w-full flex p-4 text-2xl border-b border-zinc-600 mb-4'>
+      <Link to='/' className='flex items-center'>
+        <img src={YoutubeLogo} alt="youtube-logo" className='w-36 h-7' />
       </Link>
-      <form onSubmit={handleSubmit} className='flex'>
-        <input type="text" placeholder='Search...' value={text} onChange={handleChange} className='outline-none ml-3 w-96' />
-        <button>
+      <form onSubmit={handleSubmit} className='w-full flex justify-center'>
+        <input type="text" placeholder='Search...' value={text} onChange={handleChange} className='outline-none p-2 w-7/12 bg-black text-gray-50' />
+        <button className='bg-zinc-600 px-4'>
           <BsSearch />
         </button>
       </form>
