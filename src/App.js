@@ -1,11 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import SearchHeader from './components/SearchHeader/SearchHeader';
+import SearchHeader from './components/SearchHeader';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <div>
       <SearchHeader />
-      <Outlet />
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
     </div>
   );
 }
