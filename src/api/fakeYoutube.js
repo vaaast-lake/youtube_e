@@ -6,7 +6,7 @@ export default class FakeYoutube {
   }
 
   async search(keyword) {
-    return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
+    return keyword ? this.#searchByKeyword() : this.#mostPopular();
   }
 
   async #searchByKeyword() {
