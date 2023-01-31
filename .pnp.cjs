@@ -28,6 +28,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@tailwindcss/line-clamp", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:0.4.2"],\
             ["@tanstack/react-query", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:4.23.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:13.4.0"],\
@@ -4105,6 +4106,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@svgr/plugin-jsx", "npm:5.5.0"],\
             ["@svgr/plugin-svgo", "npm:5.5.0"],\
             ["loader-utils", "npm:2.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@tailwindcss/line-clamp", [\
+        ["npm:0.4.2", {\
+          "packageLocation": "./.yarn/cache/@tailwindcss-line-clamp-npm-0.4.2-7e8725ef00-26b8135df2.zip/node_modules/@tailwindcss/line-clamp/",\
+          "packageDependencies": [\
+            ["@tailwindcss/line-clamp", "npm:0.4.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:0.4.2", {\
+          "packageLocation": "./.yarn/__virtual__/@tailwindcss-line-clamp-virtual-895a1753be/0/cache/@tailwindcss-line-clamp-npm-0.4.2-7e8725ef00-26b8135df2.zip/node_modules/@tailwindcss/line-clamp/",\
+          "packageDependencies": [\
+            ["@tailwindcss/line-clamp", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:0.4.2"],\
+            ["@types/tailwindcss", null],\
+            ["tailwindcss", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:3.2.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/tailwindcss",\
+            "tailwindcss"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17655,6 +17678,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["youtube_e", "workspace:."],\
+            ["@tailwindcss/line-clamp", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:0.4.2"],\
             ["@tanstack/react-query", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:4.23.0"],\
             ["@testing-library/jest-dom", "npm:5.16.5"],\
             ["@testing-library/react", "virtual:2b17fe7967e1eb5107a35a5f2e049185921f7cdaa261107c093658c5e92b1110b685ad4cc3606410fbc1b8f2bf767a1054ea8c4b96a49440cea400069a9a4d38#npm:13.4.0"],\
