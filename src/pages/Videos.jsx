@@ -18,9 +18,12 @@ export default function Videos() {
       </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Someting is wrong</p>}
-      {videos && <ul>
-        {videos.map(video => <VideoCard key={video.id} video={video} />)}
-        </ul>}
+      {
+        videos
+          && <ul className='flex w-full flex-wrap justify-center'>
+            {videos.map(video => <VideoCard key={video.id} video={video} />)}
+          </ul>
+      }
     </>
   );
 }
