@@ -11,8 +11,10 @@ export default class Youtube {
     return this.#searchByRelated(videoId);
   }
 
-  async channels(channelId) {
-    return this.#channels(channelId);
+  async channelImageURL(id) {
+    return this.apiClient
+      .channels(id)
+      .then(res => res.data.items[0].snippet.thumbnails.default.url);
   }
 
   async #searchByKeyword(keyword) {
@@ -54,15 +56,4 @@ export default class Youtube {
       .then(items => items.map(item => ({...item, id: item.id.videoId})));
   }
 
-  async #channels(channelId) {
-    return this.apiClient
-      .detail({
-        params: {
-          part: 'snippet%2CcontentDetails%2Cstatistics',
-          id: channelId,
-        }
-      })
-      .then(res => res.data.items)
-      .then(item => (item[0]));
-  }
 }

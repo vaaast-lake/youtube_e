@@ -14,6 +14,7 @@ export default class FakeYoutubeClient {
   }
 
   async channel() {
+  async channels() {
     return axios.get('/videos/channel.json');
   }
 }
