@@ -7,8 +7,17 @@ export default class Youtube {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
 
-  async searchByRelated(videoId) {
-    return this.#searchByRelated(videoId);
+  async relatedVideos(id) {
+    return this.apiClient.search({
+      params: {
+        part: 'snippet',
+        maxResults: 25,
+        type: 'video',
+        relatedToVideoId: id
+      },
+    })
+    .then(res => res.data.items.map(item => ({...item, id: item.id.videoId}))
+    );
   }
 
   async channelImageURL(id) {
@@ -27,8 +36,8 @@ export default class Youtube {
           q: keyword
         }
       })
-      .then(res => res.data.items)
-      .then(items => items.map(item => ({...item, id: item.id.videoId})));
+      .then(res => res.data.items.map(item => ({...item, id: item.id.videoId}))
+      );
   }
 
   async #mostPopular() {
@@ -42,18 +51,4 @@ export default class Youtube {
       })
       .then(res => res.data.items);
   }
-
-  async #searchByRelated(videoId) {
-    return this.apiClient
-      .related({
-        params: {
-          part: 'snippet',
-          realtedToVideoId: videoId,
-          type: 'video',
-        }
-      })
-      .then(res => res.data.items)
-      .then(items => items.map(item => ({...item, id: item.id.videoId})));
-  }
-
 }
