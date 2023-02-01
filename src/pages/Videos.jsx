@@ -9,13 +9,11 @@ export default function Videos() {
   const { youtube } = useYoutubeApi();
   const { isLoading, error, data: videos} = useQuery(
     ['videos', keyword],
-    () =>  youtube.search(keyword)
+    () =>  youtube.search(keyword),
+    { staleTime: 1000 * 60 * 1 }
   );
   return (
     <>
-      <div>
-        Videos { keyword ? `${ keyword }` : 'hot trend' }
-      </div>
       {isLoading && <p>Loading...</p>}
       {error && <p>Someting is wrong</p>}
       {
