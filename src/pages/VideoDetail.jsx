@@ -1,37 +1,29 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useYoutubeApi } from '../context/YoutubeApiContext';
-import { useQuery } from '@tanstack/react-query';
-import VideoCard from '../components/VideoCard';
+import { useLocation } from 'react-router-dom';
+import ChannelInfo from '../components/ChannelInfo';
+import RelatedVideos from '../components/RelatedVideos';
 
 export default function VideoDetail() {
-  const { videoId } = useParams();
-  const { youtube } = useYoutubeApi();
-  const { isLoading, error, data: videos} = useQuery(
-    ['videos', videoId],
-    () =>  youtube.searchByRelated(videoId)
-  );
-
-  console.log(videos);
+  const { state: { video } } = useLocation();
+  const { title, channelId, channelTitle, description } = video.snippet;
 
   return (
-      <div className='flex'>
+    <section>
+      <article>
+        <iframe 
+          src={`https://www.youtube.com/embed/${video.id}`}
+          width="100%"
+          height="640"
+        />
         <div>
-          <iframe 
-            src={`https://www.youtube.com/embed/${videoId}`}
-            width="1080"
-            height="640"
-            frameborder="0"
-          >
-          </iframe>
+          <h2>{title}</h2>
+          <ChannelInfo id={channelId} name={channelTitle} />
+          <pre>{description}</pre>
         </div>
-        <ul className='flex flex-col'>
-          {isLoading && <p>Loading...</p>}
-          {error && <p>something is wrong!</p>}
-          {videos &&
-            videos.map(video => <VideoCard video={video} />)
-          }
-        </ul>
-      </div>
+      </article>
+      <section>
+        <RelatedVideos id={video.id} />
+      </section>
+    </section>
   );
 }

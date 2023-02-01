@@ -11,7 +11,7 @@ export default function VideoCard({ video }) {
       <img 
         src={thumbnails.high.url}
         alt={title}
-        onClick={() => navigate(`videos/watch/${id}`)}
+        onClick={() => navigate(`videos/watch/${id}`, { state: { video }})}
         className='w-full hover:cursor-pointer'
       />
       <div>
